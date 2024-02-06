@@ -2,7 +2,7 @@
 
 The COCO (Common Objects in Context) dataset of 80 object categories and over 200K labeled images is a large-scale object detection, segmentation, and captioning dataset. You can explore the classes here: https://cocodataset.org/#explore
 
-This script was used for a project and builds upon tikitong's minicoco script (repo: https://github.com/tikitong/minicoco,solution: https://stackoverflow.com/a/73249837/14864907) and generates a training, test and validation dataset in YOLO format, with the following directory tree:
+This script was used for a project and builds upon tikitong's minicoco script (repo: https://github.com/tikitong/minicoco, solution: https://stackoverflow.com/a/73249837/14864907) and generates a training, test and validation dataset in YOLO format, with the following directory tree:
 
 ```
 dataset/
