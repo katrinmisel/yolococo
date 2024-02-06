@@ -1,23 +1,16 @@
 import os
 import shutil
 import random
+from random import sample
 from PIL import Image
 import json
-import argparse
-import os
 import zipfile
-import requests
-import subprocess
-import os
-import json
 import argparse
 import numpy as np
 from pathlib import Path
-from random import sample
 from pycocotools.coco import COCO
 from alive_progress import alive_bar
 import asyncio
-
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -49,7 +42,7 @@ async def main():
 
 asyncio.run(main())
 
-#######################MINICOCO######################################
+###################################### MINICOCO ######################################
 
 Path("data/images").mkdir(parents=True, exist_ok=True)
 Path("data/labels").mkdir(parents=True, exist_ok=True)
@@ -130,7 +123,7 @@ valset = cocoJson(imageval)
 createJson(valset, train=False)
 downloadImages(imageval, title='Downloading images of the validation set:')
 
-#####################################################################
+#######################################################################################
 
 def get_image_dimensions(image_path):
     with Image.open(image_path) as img:
