@@ -1,0 +1,6 @@
+names:
+  0: scissors
+path: dataset
+test: test/images
+train: train/images
+val: valid/images

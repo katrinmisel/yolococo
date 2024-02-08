@@ -2,8 +2,13 @@
 
 The COCO (Common Objects in Context) dataset of 80 object categories and over 200K labeled images is a large-scale object detection, segmentation, and captioning dataset. You can explore the classes here: https://cocodataset.org/#explore
 
-This script was used for a project and builds upon tikitong's minicoco script (repo: https://github.com/tikitong/minicoco, solution: https://stackoverflow.com/a/73249837/14864907) and generates a training, test and validation dataset in YOLO format, with the following directory tree:
+This script was used for a project and builds upon tikitong's minicoco script (repo: https://github.com/tikitong/minicoco, solution: https://stackoverflow.com/a/73249837/14864907) and generates a training, test and validation dataset in YOLO format:
 
+```
+class x_center y_center width height
+```
+
+With the following directory tree:
 ```
 dataset/
   train/
@@ -16,6 +21,8 @@ dataset/
     images/ *.jpg
     labels/ *.txt
 ```
+
+It also generates the data.yaml file necessary for training. For details on training a YOLO model, visit: https://docs.ultralytics.com/modes/train/#why-choose-ultralytics-yolo-for-training
 
 ### Create and activate a virtual environment:
 ```

@@ -14,6 +14,7 @@ import asyncio
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import yaml
 
 parser = argparse.ArgumentParser()
 
@@ -243,3 +244,19 @@ for image in test_images:
     src_label_path = os.path.join(valid_labels_dir, label_file)
     dest_label_path = os.path.join(test_labels_dir, label_file)
     shutil.move(src_label_path, dest_label_path)
+
+def create_data_yaml(cats, data_path='dataset', train_path='train/images', val_path='valid/images', test_path='test/images'):
+    data = {
+        'path': data_path,
+        'train': train_path,
+        'val': val_path,
+        'test': test_path,
+    }
+
+    names_dict = {index: name for index, name in enumerate(cats)}
+    data['names'] = names_dict
+
+    with open('data.yaml', 'w') as file:
+        yaml.dump(data, file)
+
+create_data_yaml(catNms)
